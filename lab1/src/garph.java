@@ -7,7 +7,7 @@ public class garph {
 	int  MAX_WEIGHT = Integer.MAX_VALUE/2;
 	static String[] words = new String[100];
 	static int edge[][] = new int[100][100];
-	static int  reallen;
+	int  reallen;
 	int weight_index;
 	public garph() throws IOException
 	{
@@ -208,7 +208,7 @@ public class garph {
 		   for (int m = 0; m < n; m++) 
 		   {  
 			   if(m!=word1_index)			   
-		   
+			   {
 					if (minmatrix[m] == MAX_WEIGHT) 
 					{     
 						System.out.println("没有到达该点的路径");  		     
@@ -217,7 +217,8 @@ public class garph {
 					{  		     
 					   		sentence=sentence+route[m]+",";     
 					   //System.out.println(route[m]);  		   		   
-					} 
+					}
+			   }
 				}  
 		     
 		//   }  
@@ -237,7 +238,7 @@ public class garph {
 		   if (word1_index == -1)
 			   return "ERROR";
 		   int word2_index = match(words,word2);
-		   if (word1_index == -1)
+		   if (word2_index == -1)
 			   return "ERROR";
 		   for (int i = 0 ; i < reallen ;i++) 
 		   {
@@ -343,7 +344,7 @@ public class garph {
 	     String [] notepath; 
 		GraphViz gv1 = new GraphViz();
 	      gv1.addln(gv1.start_graph());
-	      int a,b,len;
+	      int a,b;
 	      notepath = word3.split("->");
 	      for(int i=0;i<reallen;i++)
 	      {
@@ -377,7 +378,7 @@ public class garph {
 	      String type = "png";
 //	      String type = "plain";
 	 //     File out = new File("/tmp/out." + type);   // Linux
-	      File out = new File("E://graph2" + type);    // Windows
+	      File out = new File("E://graph2." + type);    // Windows
 	      gv1.writeGraphToFile( gv1.getGraph( gv1.getDotSource(), type ), out );
 	   }
 }
