@@ -1,12 +1,12 @@
 import java.io.File;
 public class Proba
 {
-	//B1上修改
-	//B2上修改
+	//B1涓婁慨鏀�
+	//B2涓婁慨鏀�
   // private static final int MAX_WEIGHT = 0;
 public static void main(String[] args)
    {
-      Proba p = new Proba();
+ 
       //p.showDirectedGraph();
 //      p.start2();
    }
@@ -14,7 +14,8 @@ public static void main(String[] args)
     * Construct a DOT graph in memory, convert it
     * to image and store the image in the file system.
     */
-   public void showDirectedGraph(garph G)
+   @SuppressWarnings({ "static-access" })
+public void showDirectedGraph(garph G)
    {
       GraphViz gv = new GraphViz();
       gv.addln(gv.start_graph());
